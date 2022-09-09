@@ -4,24 +4,28 @@ apply from: this.rootProject.file('config.gradle')
 
 
 buildscript {
-    ext.kotlin_version = '1.6.20'
+    ext.kotlin_version = '1.7.10'
     ext.gradle_version = '3.6.3'
+    //配置插件的仓库
     repositories {
-        google()
-        mavenLocal()
-        mavenCentral()
-        maven { url 'https://repo1.maven.org/maven2/' }
+//        google()
+//        mavenLocal()
+//        mavenCentral()
+//        maven { url 'https://repo1.maven.org/maven2/' }
+        //用国内的镜像  够用了
         maven {
-            url 'https://jitpack.io'
+            url 'https://mirrors.tencent.com/nexus/repository/maven-public/'
         }
+//        maven {
+//            url 'https://jitpack.io'
+//        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.3'
+        classpath 'com.android.tools.build:gradle:7.2.2'
 
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
 
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
 
 
     }
@@ -29,12 +33,16 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
-        mavenLocal()
-        mavenCentral()
-        maven { url 'https://repo1.maven.org/maven2/' }
+//        google()
+//        mavenLocal()
+//        mavenCentral()
+//        maven { url 'https://repo1.maven.org/maven2/' }
+//        maven {
+//            url 'https://jitpack.io'
+//        }
+        //用国内的镜像  够用了
         maven {
-            url 'https://jitpack.io'
+            url 'https://mirrors.tencent.com/nexus/repository/maven-public/'
         }
     }
 }

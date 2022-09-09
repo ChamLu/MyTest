@@ -14,7 +14,7 @@ import com.cham.mytest.utils.logeMsg
  * @UpdateDate:     2021/10/29 14:42
  * @UpdateRemark:
  */
-class 最外层View @JvmOverloads constructor(
+class OutSideView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0

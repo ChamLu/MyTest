@@ -63,16 +63,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun onClick() {
         mBinding.btnStart.setOnClickListener {
-            Glide.with(this).load(R.drawable.qmsht)
+            Glide.with(this)
+                .load(R.drawable.qmsht)
                .override(640, 11888)
                 .into(mBinding.ivBig)
 
-            val s = GlideApp
-                .with(this)
-                .load(R.drawable.qmsht)
-
-                .override(640, 11888)
-                .into(mBinding.ivBig)
+//            val s = GlideApp
+//                .with(this)
+//                .load(R.drawable.qmsht)
+//
+//                .override(640, 11888)
+//                .into(mBinding.ivBig)
 
 
         }
@@ -108,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         mBinding.btnNodeGet.setOnClickListener {
 
             //弱引用
-            s222.get()?.invoke()
+            Log.e(TAG, "onClick: "+ s222.get()?.invoke())
 
             //   node.invoke()
         }
@@ -320,8 +321,6 @@ class MainActivity : AppCompatActivity() {
         var next: Node? = null
 
         operator fun invoke(): String {
-
-
             return "$key : $value"
         }
 

@@ -14,7 +14,7 @@ import com.cham.mytest.utils.logeMsg
  * @UpdateDate:     2021/10/29 14:54
  * @UpdateRemark:
  */
-class 子View @JvmOverloads constructor(
+class MyView @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet?,
     defStyleAttr: Int = 0

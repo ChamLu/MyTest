@@ -8,7 +8,7 @@ dependencies {
     implementation gradleApi() // gradler sdk
     implementation localGroovy() // groovy sdk
 
-    implementation 'com.android.tools.build:gradle:4.1.3'
+    implementation 'com.android.tools.build:gradle:7.2.2'
 
     //Javassist是一款字节码编辑工具，可以直接编辑和生成Java生成的字节码，
     // 以达到对.class文件进行动态修改的效果。熟练使用这套工具，可以让Java编程更接近与动态语言编程。

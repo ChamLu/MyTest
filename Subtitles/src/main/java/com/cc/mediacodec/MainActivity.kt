@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator
 import android.animation.TypeEvaluator
 import android.animation.ValueAnimator
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.hardware.Sensor
@@ -17,12 +18,44 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import com.cc.mediacodec.databinding.ActivityMainBinding
+import java.util.ArrayList
 
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
 
+
     companion object {
         val TAG = "MainActivity"
+        val TITLE = "TITLE"
+        val MILLISECOND = "MILLISECOND"
+        val COLORNUM = "COLORNUM"
+
+        fun startMainActivity(
+            context: Context,
+            title: String? = "FrogMonster",
+            millisecond: String?,
+            colorNum: String?
+        ) {
+            val intent = Intent(context, MainActivity::class.java).apply {
+
+                if (title.isNullOrBlank()) {
+                    putExtra(TITLE, "FrogMonster")
+                } else putExtra(TITLE, title)
+
+
+                if (millisecond.isNullOrBlank()) {
+                    putExtra(MILLISECOND, 1000)
+                } else putExtra(MILLISECOND, millisecond.toInt())
+
+
+                if (colorNum.isNullOrBlank()) {
+                    putExtra(COLORNUM, 0)
+                } else putExtra(COLORNUM, colorNum.toInt())
+
+
+            }
+            context.startActivity(intent)
+        }
     }
 
     private val mBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -36,10 +69,21 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     //动态检测（摇晃、倾斜等） 测量在所有三个物理轴向（x、y、z）上施加在设备上的重力，单位为 m/s2。
     private var sensorAaccelerometer: Sensor? = null
 
+    private var gravity = mutableListOf(0f, 0f, 0f)
 
-    private var gravity = mutableListOf(0f,0f,0f)
+    private var linear_acceleration = mutableListOf<Float>(0f, 0f, 0f)
 
-    private var linear_acceleration = mutableListOf<Float>(0f,0f,0f)
+    val mTitle: String? by lazy {
+        intent.extras?.getString(TITLE)
+    }
+    val mMillisecond by lazy {
+        intent.extras?.getInt(MILLISECOND)
+    }
+
+    val mColorNum by lazy {
+        intent.extras?.getInt(COLORNUM)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +94,10 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensorAaccelerometer = sensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
 
+        mTitle?.let {
+            mBinding.tvPlayer.text = mTitle
+        }
+
 
 
         ActivityCompat.requestPermissions(this, permissions, 1000)
@@ -58,18 +106,37 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             Typeface.createFromAsset(assets, "fonts/HarmonyOS_Sans_Medium_Italic.ttf")
 
         mBinding.tvPlayer.typeface = harmonyTypeFace
-        val listColor = mutableListOf<Int>(Color.parseColor("#fce4ec"), Color.parseColor("#880e4f"))
+
+
+        val listColor1 =
+            mutableListOf<Int>(Color.parseColor("#F3E5F5"), Color.parseColor("#4A148C"))
 
         val listColor2 =
             mutableListOf<Int>(Color.parseColor("#EA80FC"), Color.parseColor("#AA00FF"))
 
+        //莱茵蓝
         val listColor3 =
             mutableListOf<Int>(Color.parseColor("#E2F2FD"), Color.parseColor("#002FA7"))
 
-        //莱茵蓝
+
+        var aColor = mutableListOf<Int>()
+
+        when (mColorNum) {
+            0 -> {
+                aColor = listColor1
+            }
+            1 -> {
+                aColor = listColor2
+            }
+            2 -> {
+                aColor = listColor3
+            }
+        }
+
+
         val colorAnim =
-            ObjectAnimator.ofInt(mBinding.tvPlayer, "textColor", listColor3[0], listColor3[1])
-        colorAnim.duration = 1000
+            ObjectAnimator.ofInt(mBinding.tvPlayer, "textColor", aColor[0], aColor[1])
+        colorAnim.duration = mMillisecond!!.toLong()
         val argbEvaluator = MyColorEvaluator()
         colorAnim.setEvaluator(argbEvaluator)
         colorAnim.repeatCount = ValueAnimator.INFINITE
@@ -78,7 +145,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         val apAnim =
             ObjectAnimator.ofFloat(mBinding.lottieClap, "alpha", 1f, 0f, 1f)
-        apAnim.duration = 2000
+        apAnim.duration = 1500
         apAnim.repeatCount = ValueAnimator.INFINITE
         apAnim.repeatMode = ValueAnimator.REVERSE
         apAnim.start()
@@ -108,17 +175,17 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
                 endHsv[0].plus(360)
             }
-            outHsv[0] = startHsv.get(0) + (endHsv.get(0) - startHsv.get(0)) * fraction
+            outHsv[0] = startHsv[0] + (endHsv[0] - startHsv[0]) * fraction
             if (outHsv[0] > 360) {
 //                outHsv.get(0) -= 360
                 outHsv[0].minus(360)
 
-            } else if (outHsv.get(0) < 0) {
+            } else if (outHsv[0] < 0) {
 //                outHsv.get(0) += 360
                 outHsv[0].plus(360)
             }
-            outHsv[1] = startHsv.get(1) + (endHsv.get(1) - startHsv.get(1)) * fraction
-            outHsv[2] = startHsv.get(2) + (endHsv.get(2) - startHsv.get(2)) * fraction
+            outHsv[1] = startHsv[1] + (endHsv[1] - startHsv[1]) * fraction
+            outHsv[2] = startHsv[2] + (endHsv[2] - startHsv[2]) * fraction
 
 
             return Color.HSVToColor(alpha, outHsv)
@@ -153,7 +220,6 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         //events.values[2] 沿 z 轴的加速力（包括重力）
 
 
-
         event?.let { events ->
 
             val alpha: Float = 0.8f
@@ -169,8 +235,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             linear_acceleration[2] = events.values[2] - gravity[2]
 
 
-            Log.e(TAG, "onSensorChanged: ${ linear_acceleration[0]}")
-
+            Log.e(TAG, "onSensorChanged: ${linear_acceleration[0]}")
 
 
         }

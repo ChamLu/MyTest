@@ -448,6 +448,7 @@ class RvLayoutManager(var sTime: Int = 0) : RecyclerView.LayoutManager(),
 
                 logeMsg("ON_PAUSE")
             }
+            else -> {}
         }
 
 

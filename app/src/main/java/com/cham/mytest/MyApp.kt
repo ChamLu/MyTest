@@ -6,8 +6,7 @@ import android.app.ActivityManager
 import android.app.Application
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import androidx.multidex.MultiDex
+
 import com.cham.mytest.utils.logeMsg
 
 class MyApp : Application() {
@@ -23,6 +22,7 @@ class MyApp : Application() {
                 return field
 
             }
+
         fun get(): MyApp {
             return instance!!
         }
@@ -34,22 +34,21 @@ class MyApp : Application() {
      * */
     override fun onCreate() {
         super.onCreate()
-        if (getProcesssName(this) != BuildConfig.APPLICATION_ID) {
-            return
-        }
-        Log.e(TAG, "当前进程名字: " + getProcesssName(this))
+//        if (getProcesssName(this) != BuildConfig.APPLICATION_ID) {
+//            return
+//        }
+//        Log.e(TAG, "当前进程名字: " + getProcesssName(this))
         registerActivityLifecycleCallbacks(appAllLife)
 
 
     }
 
 
-
-
     fun getProcesssName(context: Context): String {
         val pid = android.os.Process.myPid()//获取进程pid
         var processName = ""
         //获取系统的ActivityManager服务
+        //通过Binder去和AMS进行交互
         val am = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         for (appProcess in am.runningAppProcesses) {
             if (appProcess.pid == pid) {
@@ -64,7 +63,7 @@ class MyApp : Application() {
     val appAllLife = object : ActivityLifecycleCallbacks {
         override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
 
-            logeMsg( message = "每个Aty启动","MyApp")
+            logeMsg(message = "每个Aty启动", "MyApp")
 
         }
 
@@ -93,12 +92,5 @@ class MyApp : Application() {
         }
 
     }
-
-
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-        MultiDex.install(this)
-    }
-
 
 }

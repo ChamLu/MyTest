@@ -9,17 +9,20 @@ apply plugin: 'kotlin-kapt'
 
 
 android {
-    compileSdkVersion rootProject.android.compileSdkVersion
-    // buildToolsVersion "29.0.3"
+  //  compileSdkVersion rootProject.android.compileSdkVersion
+    compileSdk  rootProject.android.compileSdkVersion
     defaultConfig {
+        minSdk rootProject.android.minSdkVersion
+        targetSdk rootProject.android.targetSdkVersion
         applicationId rootProject.android.applicationId
-        minSdkVersion rootProject.android.minSdkVersion
-        targetSdkVersion rootProject.android.targetSdkVersion
-        versionCode rootProject.android.versionCode
-        versionName rootProject.android.versionName
+//        minSdkVersion rootProject.android.minSdkVersion
+//        targetSdkVersion rootProject.android.targetSdkVersion
+//        versionCode rootProject.android.versionCode
+//        versionName rootProject.android.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        multiDexEnabled true
+        // minSdkVersion 设为 21 或更高版本，系统会默认启用 MultiDex
+//        multiDexEnabled true
 
     }
     buildTypes {
@@ -124,7 +127,7 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
 
-    implementation 'com.android.support:multidex:1.0.3'
+//    implementation 'com.android.support:multidex:1.0.3'
 
     kapt rootProject.depsLibs.glideKapt
     //高斯模糊

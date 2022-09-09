@@ -37,7 +37,7 @@ class OnRecyclerItemClickListener(val  recyclerView: RecyclerView) : RecyclerVie
         /**
          * 点击事件
          * */
-        override fun onSingleTapUp(e: MotionEvent?): Boolean {
+        override fun onSingleTapUp(e: MotionEvent): Boolean {
             val child: View? = recyclerView.findChildViewUnder(e!!.x, e.y)
             child?.let {
                 val vh: RecyclerView.ViewHolder = recyclerView.getChildViewHolder(it)
@@ -49,7 +49,7 @@ class OnRecyclerItemClickListener(val  recyclerView: RecyclerView) : RecyclerVie
         /**
          * 长按触摸屏，超过一定时长，就会触发这个事件
          * */
-        override fun onLongPress(e: MotionEvent?) {
+        override fun onLongPress(e: MotionEvent) {
             val child: View? = recyclerView.findChildViewUnder(e!!.x, e.y)
             child?.let {
                 val vh: RecyclerView.ViewHolder = recyclerView.getChildViewHolder(it)
@@ -60,8 +60,8 @@ class OnRecyclerItemClickListener(val  recyclerView: RecyclerView) : RecyclerVie
 
 
        override fun onScroll(
-           e1: MotionEvent?,
-           e2: MotionEvent?,
+           e1: MotionEvent,
+           e2: MotionEvent,
            distanceX: Float,
            distanceY: Float
        ): Boolean {

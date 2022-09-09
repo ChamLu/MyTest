@@ -37,6 +37,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import kotlin.random.Random
 
 
 /**
@@ -139,7 +140,8 @@ class NicoFragment : Fragment() {
 
 
         vm.mS.observe(viewLifecycleOwner, Observer {
-            Toast.makeText(requireContext(), TAG + "$it", Toast.LENGTH_SHORT).show()
+            logeMsg("Fragment")
+         //   Toast.makeText(requireContext(), TAG + "$it", Toast.LENGTH_SHORT).show()
         })
     }
 
@@ -215,7 +217,7 @@ class NicoFragment : Fragment() {
 
             //测试一
             var sBean = MemberBean()
-            sBean.memberId = "物流信息可能更新不及时，若无信息更新，可在物流公司官方网站查询"
+            sBean.memberId = "广告: ---vivo S7手机将不惧距离与光线的限制，带来全场景化自拍体验，刷新了5G时代的自拍旗舰标准"
             mBinding.tvSpean4.text = sBean.memberKk
             mBinding.tvSpean4.isSelected = true
             mBinding.tvSpean4.setOnClickListener {
@@ -231,7 +233,7 @@ class NicoFragment : Fragment() {
             Log.e("后部分线程明： ", Thread.currentThread().name)
             context?.let {
                 Glide.with(it)
-                    .load("https://user-gold-cdn.xitu.io/2020/1/17/16fb12a245261ad3?imageView2/1/w/1304/h/734/q/85/interlace/1")
+                    .load(R.drawable.bg_live_error)
                     .into(mBinding.iv1)
             }
 
@@ -285,6 +287,12 @@ class NicoFragment : Fragment() {
         }
         mBinding.btn11.setOnClickListener {
             TwoMotionActivity.startTwoMotionActivity(requireContext())
+        }
+        val r = Random(9)
+        mBinding.btnAdd.setOnClickListener {
+
+
+            mBinding.tvSpean.text=r.nextInt(10).toString()
         }
     }
 

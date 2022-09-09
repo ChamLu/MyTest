@@ -14,7 +14,7 @@ import com.cham.mytest.utils.logeMsg
  * @UpdateDate:     2021/10/29 14:49
  * @UpdateRemark:
  */
-class 里层View @JvmOverloads constructor(
+class InSideView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : LinearLayoutCompat(context, attrs, defStyleAttr) {

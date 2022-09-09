@@ -2,25 +2,30 @@
 <layout>
 
 
-    <com.cham.mytest.ui.eventDispatch.view.最外层View xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.cham.mytest.ui.eventDispatch.view.OutSideView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/fff"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-        <com.cham.mytest.ui.eventDispatch.view.里层View
+        <com.cham.mytest.ui.eventDispatch.view.InSideView
+            android:id="@+id/mInside"
             android:layout_width="@dimen/dp_300"
             android:layout_height="@dimen/dp_500"
             android:background="@color/colorPrimary"
             android:orientation="vertical">
 
-
-            <com.cham.mytest.ui.eventDispatch.view.子View
+            <com.cham.mytest.ui.eventDispatch.view.MyView
+                android:id="@+id/mView"
                 android:layout_width="@dimen/dp_200"
                 android:layout_height="@dimen/dp_200"
                 android:background="@color/colorAccent" />
 
-        </com.cham.mytest.ui.eventDispatch.view.里层View>
+
+        </com.cham.mytest.ui.eventDispatch.view.InSideView>
 
 
-    </com.cham.mytest.ui.eventDispatch.view.最外层View>
+    </com.cham.mytest.ui.eventDispatch.view.OutSideView>
 </layout>

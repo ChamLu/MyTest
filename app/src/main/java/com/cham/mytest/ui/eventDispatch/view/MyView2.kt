@@ -50,4 +50,5 @@ class MyView2 @JvmOverloads constructor(
         logeMsg("获取按下的时间  " + event.eventTime)
         return flag
     }
+
 }

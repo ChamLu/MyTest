@@ -17,6 +17,7 @@ import com.cham.mytest.databinding.FragmentPokoBinding
 import com.cham.mytest.databinding.LayoutViewstubBinding
 import com.cham.mytest.ui.applayoutbar_ui.AppLAyoutBarActivity
 import com.cham.mytest.ui.drawerLayout.DrawerLayoutActivity
+import com.cham.mytest.ui.nestedscroll.NestedScrollViewActivity
 import com.cham.mytest.ui.viewpager2.ui.ViewPager2MainActivity
 import com.cham.mytest.utils.logeMsg
 import com.google.gson.JsonArray
@@ -107,6 +108,9 @@ class PokoFragment : Fragment() {
         }
         mBinding.btn7.setOnClickListener {
             AppLAyoutBarActivity. startAppLAyoutBarActivity(requireContext())
+        }
+        mBinding.btn8.setOnClickListener{
+            NestedScrollViewActivity.nestedScrollViewActivity(requireContext())
         }
     }
 

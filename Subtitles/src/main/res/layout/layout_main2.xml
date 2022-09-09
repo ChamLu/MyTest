@@ -24,23 +24,36 @@
 
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/tvPlay"
+        android:id="@+id/edPlay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:hint="字幕"
         android:gravity="center"
+        android:inputType="text"
         app:layout_constraintTop_toBottomOf="@id/appBar" />
 
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/tvPlayNum"
+        android:id="@+id/edPlayNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:hint="速度"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/tvPlay" />
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/edPlay" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="0-2"
+        android:gravity="center"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/edPlayNum" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGo"
@@ -48,6 +61,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="Go"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="100dp"

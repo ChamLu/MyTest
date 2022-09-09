@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Media</string>
+    <string name="app_name">SubTitles</string>
 
     <string name="nav_red">Red</string>
     <string name="nav_pink">Pink</string>

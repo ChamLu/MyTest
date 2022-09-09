@@ -6,12 +6,12 @@ plugins {
 
 
 android {
-    compileSdkVersion 30
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.cham.marquee"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdk 21
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -27,6 +27,7 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -38,6 +39,7 @@ android {
          viewBinding = true
     }
 
+
 }
 
 dependencies {
@@ -48,7 +50,7 @@ dependencies {
 
     kapt  project(":lib_processor")
     //动画
-    implementation 'com.airbnb.android:lottie:4.1.0'
+    implementation 'com.airbnb.android:lottie:5.2.0'
 
 
     implementation 'com.jakewharton:butterknife:10.2.3'

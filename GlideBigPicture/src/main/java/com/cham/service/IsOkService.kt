@@ -46,7 +46,7 @@ class IsOkService : AccessibilityService() {
     private var mJob: Job? = null
 
 
-    private var netCounterFlow: Flow<Int> = dataStore.data.map {
+    private var netCounterFlow: Flow<Int> = MApp.get().dataStore.data.map {
         it[NETEASE_COUNT] ?: 0
     }
 
@@ -54,18 +54,41 @@ class IsOkService : AccessibilityService() {
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         val sourceNodeInfo = rootInActiveWindow ?: return
         event?.let { event ->
-            val packageName = event.packageName.toString()
-            val eventType = event.eventType
-            if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
-                //窗口改变
-                Log.e(TAG, " packageName = $packageName")
+            event.packageName?.let {
+                val packageName:String =it.toString()
+                val eventType = event.eventType
+                if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+                    //窗口改变
+                    Log.e(TAG, " packageName = $packageName")
 
-                //针对网易云音乐
-                if (packageName.contains("com.netease.cloudmusic")) {
+                    //针对网易云音乐
+                    if (packageName.contains("com.netease.cloudmusic")) {
 
-                    MainScope().launch {
+                        MainScope().launch {
+//                            val s1 =
+//                                sourceNodeInfo.findAccessibilityNodeInfosByViewId("com.netease.cloudmusic:id/portal_rv")
+//
+//
+//                            if (s1.isNotEmpty()) {
+//                                for (s in s1) {
+//                                    Log.e(TAG, "onAccessibilityEvent: " + s.childCount)
+//
+//                                    //私人FM
+//                                    val s2 = s.getChild(1)
+//                                    if (s2.isClickable) {
+//                                        withContext(Main) {
+//                                            s2.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+//                                        }
+//
+//
+//                                    }
+//                                }
+//                            }else{
+//
+//                                Log.e(TAG, "onAccessibilityEvent: 换了ID名字？ " )
+//                            }
                         if (netCounterFlow.first() == 0) {
-                           MApp.get().dataStore.edit { data ->
+                            dataStore.edit { data ->
                                 data[NETEASE_COUNT] = 1
                             }
 
@@ -91,29 +114,31 @@ class IsOkService : AccessibilityService() {
 
                         }
 
-                    }
+                        }
 
-                } else {
+                    } else {
 
-                    ACCESSIBILITY_SERVICE
-                    Log.e(TAG, " packageName2 = $packageName")
-                    MainScope().launch {
-                        withContext(Main) {
-                            MApp.get().dataStore.edit {
-                                it[NETEASE_COUNT] = 0
-                            }
+                        ACCESSIBILITY_SERVICE
+                        Log.e(TAG, " packageName2 = $packageName")
+                        MainScope().launch {
+                            withContext(Main) {
+                                dataStore.edit {
+                                    it[NETEASE_COUNT] = 0
+                                }
                             val ssss = netCounterFlow.first()
 
                             Log.e(TAG, "onAccessibilityEvent: $ssss")
+
+                            }
 
                         }
 
                     }
 
+
                 }
-
-
             }
+
 
         }
 

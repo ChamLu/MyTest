@@ -6,3 +6,5 @@ include ':plugin'
 include ':testLib'
 include ':app'
 rootProject.name='MyTest'
+include ':Subtitles'
+
