@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Media</string>
+
+    <string name="nav_red">Red</string>
+    <string name="nav_pink">Pink</string>
+    <string name="nav_purple">Purple</string>
+    <string name="nav_deep_purple">Deep Purple</string>
+    <string name="nav_indigo">Indigo</string>
+    <string name="nav_blue">Blue</string>
+    <string name="nav_light_blue">Light Blue</string>
+    <string name="nav_cyan">Cyan</string>
+    <string name="nav_teal">Teal</string>
+    <string name="nav_green">Green</string>
+    <string name="nav_light_green">Light Green</string>
+    <string name="nav_lime">Lime</string>
+    <string name="nav_yellow">Yellow</string>
+    <string name="nav_amber">Amber</string>
+    <string name="nav_orange">Orange</string>
+    <string name="nav_deep_orange">Deep Orange</string>
+    <string name="nav_brown">Brown</string>
+    <string name="nav_grey">Grey</string>
+    <string name="nav_blue_grey">Blue Grey</string>
+
+</resources>

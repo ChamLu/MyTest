@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/motion"
+    app:layoutDescription="@xml/activity_testprocessor_scene">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/materialTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="哈哈哈哈哈哈"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="红色"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        app:layout_constraintCircle="@+id/btn2"
+        app:layout_constraintCircleAngle="55"
+        app:layout_constraintCircleRadius="90dp"
+       />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/s2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintCircle="@+id/btn2"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="90dp"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/s3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        app:layout_constraintCircle="@+id/btn2"
+        app:layout_constraintCircleAngle="305"
+        app:layout_constraintCircleRadius="90dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="蓝色"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="20dp"/>
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

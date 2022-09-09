@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+
+    <Transition
+        motion:constraintSetEnd="@id/end"
+        motion:constraintSetStart="@id/start">
+
+
+        <!--        <OnClick-->
+        <!--            motion:clickAction="toggle"-->
+        <!--            motion:targetId="@id/ivFilter" />-->
+        <KeyFrameSet>
+
+            <KeyPosition
+                motion:framePosition="10"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@id/ivS"
+                motion:percentX="0.8" />
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/ivFilter" />
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/ivS" />
+
+
+            <KeyAttribute
+                motion:framePosition="25"
+                motion:motionTarget="@id/ivFilter" />
+            <KeyAttribute
+                motion:framePosition="25"
+                motion:motionTarget="@id/ivS" />
+            <KeyAttribute
+                motion:framePosition="50"
+                motion:motionTarget="@id/ivFilter" />
+            <KeyAttribute
+                motion:framePosition="50"
+                motion:motionTarget="@id/ivS" />
+            <KeyAttribute
+                android:alpha="0.0"
+                motion:framePosition="70"
+                motion:motionTarget="@id/tvFF" />
+            <KeyAttribute
+                motion:framePosition="75"
+                motion:motionTarget="@id/ivFilter" />
+            <KeyAttribute
+                motion:framePosition="75"
+                motion:motionTarget="@id/ivS" />
+
+            <KeyAttribute
+                android:alpha="0.0"
+                motion:framePosition="85"
+                motion:motionTarget="@id/ivFF" />
+
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/ivFilter" />
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/ivS" />
+            <KeyAttribute
+                android:alpha="1.0"
+                motion:framePosition="100"
+                motion:motionTarget="@id/tvFF" />
+
+        </KeyFrameSet>
+
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@id/ivFilter"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="@dimen/dp_4"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/ivS"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/ivFilter" />
+
+        <Constraint
+            android:id="@id/ivFF"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:alpha="0.0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+
+        <Constraint
+            android:id="@id/tvFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:alpha="1.0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/ivFilter"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="4dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@id/ivS"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            motion:layout_constraintBottom_toBottomOf="@id/ivFilter"
+            motion:layout_constraintEnd_toStartOf="@id/ivFF"
+            motion:layout_constraintStart_toEndOf="@id/ivFilter"
+            motion:layout_constraintTop_toTopOf="@id/ivFilter" />
+        <Constraint
+            android:id="@id/ivFF"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:alpha="1.0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent" />
+
+        <Constraint
+            android:id="@id/tvFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            motion:layout_constraintBottom_toBottomOf="@id/ivS"
+            motion:layout_constraintStart_toStartOf="@id/ivS"
+            motion:layout_constraintTop_toTopOf="@id/ivS" />
+
+
+
+    </ConstraintSet>
+
+</MotionScene>

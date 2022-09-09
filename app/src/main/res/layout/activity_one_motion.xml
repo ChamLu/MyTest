@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/one_motion"
+    app:showPaths="true">
+
+    <ImageView
+        android:id="@+id/ivBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ivf0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintLeft_toLeftOf="@+id/glLeft"
+        app:layout_constraintRight_toRightOf="@id/glRight"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_av2" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ivf1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:rotationY="30"
+        android:scaleType="centerCrop"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@id/glm2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_av3" />
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ivf2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/glm1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:saturation="1.2"
+        tools:src="@drawable/ic_av4" />
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ivf3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintLeft_toLeftOf="@+id/glLeft"
+        app:layout_constraintRight_toRightOf="@id/glRight"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_av5" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glm1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glm2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+
+    <androidx.constraintlayout.helper.widget.Carousel
+        android:id="@+id/carousel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:carousel_backwardTransition="@id/backward"
+        app:carousel_firstView="@id/ivf3"
+        app:carousel_forwardTransition="@id/forward"
+        app:carousel_infinite="true"
+        app:carousel_nextState="@id/next"
+        app:carousel_previousState="@id/previous"
+        app:constraint_referenced_ids="ivf3,ivf2,ivf0,ivf1" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

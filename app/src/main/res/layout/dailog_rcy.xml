@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.cham.mytest.widget.MaxHeightRecyclerView
+            android:id="@+id/rcy_max"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxHeight="100dp"
+            android:background="@drawable/bgbgbg"
+
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp"
+            android:paddingBottom="60dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:text="Different"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rcy_max" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

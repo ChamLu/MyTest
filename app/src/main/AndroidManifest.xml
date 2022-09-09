@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.cham.mytest">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".testchain.TestNodeActivity" />
+        <!--        开了另一个进程-->
+        <activity
+            android:name=".ui.testrv.TestRcyBoomActivity"
+            android:process=":testrv" />
+
+        <activity android:name=".ui.testrv.TestAtoActivity">
+            <intent-filter>
+                <!--协议部分，随便设置-->
+                <data
+                    android:host="www.2beauti.com"
+                    android:path="/wx/index.html"
+                    android:scheme="ooo" />
+                <!--下面这几行也必须得设置-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.testrv.TestBtoActivity" />
+        <activity android:name=".ui.viewpager2.ui.ViewPager2MainActivity" />
+        <activity android:name=".ui.drawerLayout.DrawerLayoutActivity" />
+        <activity android:name=".ui.applayoutbar_ui.AppLAyoutBarActivity" />
+        <activity android:name=".ui.eventDispatch.EventActivity" />
+        <activity android:name=".ui.rv.RvActivity" />
+        <activity android:name=".ui.cardPager.CardPagerActivity" />
+
+        <activity android:name=".ui.motionlayout.OneMotionActivity" />
+        <activity android:name=".ui.motionlayout.TwoMotionActivity" />
+
+    </application>
+
+</manifest>

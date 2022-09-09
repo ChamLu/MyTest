@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MaxHeightRecyclerView">
+        <attr name="maxRvHeight" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="FloatLinearLayout">
+        <attr name="layout_pin" format="boolean"/>
+    </declare-styleable>
+</resources>

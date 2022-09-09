@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="你好ButterKnife"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--  android:background="?attr/colorSecondaryVariant"-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="白天"
+        app:layout_constraintEnd_toStartOf="@id/btn_n"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="黑夜"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_a"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_a"
+        app:layout_constraintTop_toTopOf="@+id/btn_a" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转自己的"
+        android:layout_marginTop="144dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+</androidx.constraintlayout.widget.ConstraintLayout>

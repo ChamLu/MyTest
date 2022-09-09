@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+    <com.cham.mytest.ui.eventDispatch.view.最外层View xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.cham.mytest.ui.eventDispatch.view.里层View
+            android:layout_width="@dimen/dp_300"
+            android:layout_height="@dimen/dp_500"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+
+            <com.cham.mytest.ui.eventDispatch.view.子View
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_200"
+                android:background="@color/colorAccent" />
+
+        </com.cham.mytest.ui.eventDispatch.view.里层View>
+
+
+    </com.cham.mytest.ui.eventDispatch.view.最外层View>
+</layout>

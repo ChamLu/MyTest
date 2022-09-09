@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <!--手指向前滑 -->
+    <Transition
+        android:id="@+id/forward"
+        motion:constraintSetEnd="@+id/next"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <OnSwipe
+            motion:dragDirection="dragLeft"
+            motion:touchAnchorSide="left" />
+
+    </Transition>
+
+    <Transition
+        android:id="@+id/backward"
+        motion:constraintSetEnd="@+id/previous"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1000">
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchAnchorSide="right" />
+
+    </Transition>
+
+    <!--必须有这三个-->
+
+    <!--如果start状态与该基本布局相对应，则previous的状态则应该表示为轮播项目向右移动一个。-->
+
+    <ConstraintSet android:id="@+id/previous">
+        <Constraint
+            android:id="@+id/ivf2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:translationZ="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="@+id/glLeft"
+            motion:layout_constraintRight_toRightOf="@id/glRight"
+            motion:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivf0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:rotationY="30"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:translationZ="4dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="@id/glm2"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivf3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:rotationY="-30"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:translationZ="6dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="@id/glm1"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivf1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:translationZ="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="@+id/glLeft"
+            motion:layout_constraintRight_toRightOf="@id/glRight"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+    </ConstraintSet>
+
+
+    <!--起始状态-->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/ivf0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:translationZ="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="@+id/glLeft"
+            motion:layout_constraintRight_toRightOf="@id/glRight"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivf1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:rotationY="30"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:translationZ="4dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="@id/glm2"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivf2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:rotationY="-30"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:translationZ="6dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="@id/glm1"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivf3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:translationZ="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="@+id/glLeft"
+            motion:layout_constraintRight_toRightOf="@id/glRight"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+
+    <!--手指向前滑-->
+    <ConstraintSet android:id="@+id/next">
+        <Constraint
+            android:id="@+id/ivf1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:translationZ="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="@+id/glLeft"
+            motion:layout_constraintRight_toRightOf="@id/glRight"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivf3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:rotationY="30"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:translationZ="4dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="@id/glm2"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivf0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:rotationY="-30"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:translationZ="6dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="@id/glm1"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <!--为0 黑白图片-->
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/ivf2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:translationZ="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintDimensionRatio="2:1"
+            motion:layout_constraintLeft_toLeftOf="@+id/glLeft"
+            motion:layout_constraintRight_toRightOf="@id/glRight"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="Saturation"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+</MotionScene>

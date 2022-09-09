@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
+android {
+    compileSdkVersion rootProject.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.android.minSdkVersion
+        targetSdkVersion rootProject.android.targetSdkVersion
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    //官方组件
+    api rootProject.depsLibs.ktlibJdk8
+    api rootProject.depsLibs.appcompat
+    api rootProject.depsLibs.material
+    api rootProject.depsLibs.activity
+    api rootProject.depsLibs.fragment
+    api rootProject.depsLibs.constraintlayout
+
+    //Ktx
+    api rootProject.depsLibs.coreKtx
+    api rootProject.depsLibs.kt_android
+    api rootProject.depsLibs.kt_coroutine
+    api rootProject.depsLibs.lfvmKtx
+    api rootProject.depsLibs.lflKtx
+    api rootProject.depsLibs.lfrKtx
+    api rootProject.depsLibs.lfcKtx
+    //kt序列化
+    api 'org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.0-M1-1.4.0-rc'
+
+
+    api rootProject.depsLibs.okhttp
+    api rootProject.depsLibs.gson
+    api rootProject.depsLibs.mmvk
+    api rootProject.depsLibs.okio
+    api rootProject.depsLibs.glide
+
+    api rootProject.depsLibs.viewpager2
+
+    api rootProject.depsLibs.swiperefreshlayout
+
+    api rootProject.depsLibs.room
+
+    api rootProject.depsLibs.workManager
+
+
+    api rootProject.depsLibs.datastore
+
+
+
+
+
+}

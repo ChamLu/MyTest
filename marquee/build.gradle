@@ -1,0 +1,56 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.cham.marquee"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+
+        // for view binding :
+         viewBinding = true
+    }
+
+}
+
+dependencies {
+
+    implementation project(":testLib")
+
+    implementation project(":lib_annotations")
+
+    kapt  project(":lib_processor")
+    //动画
+    implementation 'com.airbnb.android:lottie:4.1.0'
+
+
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    kapt 'com.jakewharton:butterknife-compiler:10.2.3'
+}

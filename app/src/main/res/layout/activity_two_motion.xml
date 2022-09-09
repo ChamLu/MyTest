@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/applayout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/mmmm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/purple_200"
+            android:minHeight="50dp"
+            app:layoutDescription="@xml/tow_motion"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/ivFilter"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                app:srcCompat="@drawable/ic_av1"
+                app:roundPercent="10"
+                tools:ignore="ImageContrastCheck" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/ivS"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@color/white"
+                app:roundPercent="8" />
+
+            <androidx.constraintlayout.utils.widget.ImageFilterView
+                android:id="@+id/ivFF"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                app:srcCompat="@drawable/ic_av2"
+                app:roundPercent="10"
+                tools:ignore="ImageContrastCheck" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="飞一般的感觉"
+                />
+
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

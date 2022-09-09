@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcy_test_boom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:stackFromEnd="true"
+            />
+
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_6"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@id/rcy_test_boom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            android:text="发送消息"
+            android:background="@drawable/bg_live_error"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

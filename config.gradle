@@ -1,0 +1,98 @@
+ext {
+
+    android = [
+            compileSdkVersion: 31,
+            buildToolsVersion: "30.0.2",
+            applicationId    : "com.cham.mytest",
+            minSdkVersion    : 21,
+            targetSdkVersion : 30,
+            versionCode      : 1,
+            versionName      : "1.0",
+    ]
+
+    depsVersion = [
+            retrofitVersion             : '2.8.1',
+            converterGsonVersion        : '2.8.1',
+            gsonVersion                 : '2.8.8',
+            loggingInterceptorVersion   : '4.0.0',
+            lifecycleViewmodelKtxVersion: '2.2.0',
+            glideVersion                : '4.10.0',
+
+            material                    : '1.3.0',
+            pagingVersion               : '2.1.1',
+            appcompat                   : "1.2.0",
+            kt_core                     : "1.6.0",
+            kt_lifecycle                : "2.4.1",
+            kt_coroutine                : '1.6.0',
+            constraintlayout            : "2.1.3",
+            mmkv                        : '1.2.10',
+            okhttp                      : '4.9.3',
+            okio                        : '3.0.0',
+            viewpager2                  : "1.0.0",
+            activityKtx                 : "1.4.0",
+            fragmentKtx                 : "1.4.1",
+            swiperefreshlayout          : "1.1.0",
+            roomVersion                 : '2.2.6',
+            worker                      : "2.5.0",
+            datastore                   : "1.0.0",
+    ]
+
+    depsLibs = [
+            "appcompat"         : "androidx.appcompat:appcompat:$depsVersion.appcompat",
+            "coreKtx"           : "androidx.core:core-ktx:$depsVersion.kt_core",
+            "material"          : "com.google.android.material:material:$depsVersion.material",
+            "constraintlayout"  : "androidx.constraintlayout:constraintlayout:$depsVersion.constraintlayout",
+
+            //协程 核心
+            "kt_android"        : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$depsVersion.kt_coroutine",
+            "kt_coroutine"      : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$depsVersion.kt_coroutine",
+            // optional - support viewmodel-ktx
+            "lfvmKtx"           : "androidx.lifecycle:lifecycle-viewmodel-ktx:$depsVersion.kt_lifecycle",
+            // optional - support livedata-ktx
+            "lflKtx"            : "androidx.lifecycle:lifecycle-livedata-ktx:$depsVersion.kt_lifecycle",
+            "lfrKtx"            : "androidx.lifecycle:lifecycle-runtime-ktx:$depsVersion.kt_lifecycle",
+            "lfcKtx"            : "androidx.lifecycle:lifecycle-common-java8:$depsVersion.kt_lifecycle",
+            // JVM dependency
+            // or "kotlin-stdlib-jdk8"
+            "ktlib"             : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            "ktlibJdk8"         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            //序列化
+            "Ktserialization"   : "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0",
+
+            //mmvk
+            "mmvk"              : "com.tencent:mmkv-static:$depsVersion.mmkv",
+            // kapt 形式， DataBinding BR 生产类  跟随Gradle版本
+            "databindingKapt"   : "com.android.databinding:compiler:$rootProject.ext.gradle_version",
+            //glide
+            "glide"             : "com.github.bumptech.glide:glide:$depsVersion.glideVersion",
+            // kapt 形式
+            "glideKapt"         : "com.github.bumptech.glide:compiler:$depsVersion.glideVersion",
+            //okhttp com.squareup.okhttp3:okhttp:4.9.3
+            "okhttp"            : "com.squareup.okhttp3:okhttp:$depsVersion.okhttp",
+            //io写入流 优化
+            "okio"              : "com.squareup.okio:okio:$depsVersion.okio",
+            //最新Activity
+            "activity"          : "androidx.activity:activity-ktx:$depsVersion.activityKtx",
+
+            "gson"              : "com.google.code.gson:gson:$depsVersion.gsonVersion",
+
+            "fragment"          : "androidx.fragment:fragment-ktx:$depsVersion.fragmentKtx",
+
+            "viewpager2"        : "androidx.viewpager2:viewpager2:$depsVersion.viewpager2",
+
+            "swiperefreshlayout": "androidx.swiperefreshlayout:swiperefreshlayout:$depsVersion.swiperefreshlayout",
+
+            "room"              : "androidx.room:room-ktx:$depsVersion.roomVersion",
+
+            "workManager"       : "androidx.work:work-runtime-ktx:$depsVersion.worker",
+            //以异步、一致的事务方式存储数据，克服了 SharedPreferences 的一些缺点
+            "datastore"         : "androidx.datastore:datastore-preferences:$depsVersion.datastore",
+
+    ]
+
+
+    javaVersion = JavaVersion.VERSION_1_8
+    kotlinJvmVersion = "1.8"
+
+
+}

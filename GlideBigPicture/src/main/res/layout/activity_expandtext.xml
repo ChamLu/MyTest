@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.cham.glidebigpicture.ExpandTextVeiw
+        android:id="@+id/tvExpand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="我是测试很长很差稍等哈数据库的即可获得房价快速导航福克斯大家很健康的粉红色短裤符合时代科技士大夫江户时代尽快发货速度加快圣诞节粉红色的尽快发货速度加快十大科技粉红色的尽快发货速度加快四大皆空粉红色的尽快发货速度加快多久发货速度尽快发货速度加快是东京核辐射的接口返回是大家看法和受到激发函数的接口粉红色的尽快发航空四道口附近合适的借口粉红色的尽快发货十大科技粉红色的尽快发货速度加快十大科技粉红色的尽快发货速度加快深刻搭街坊好久开始大幅回升的接口返回上的飞机和快速的尽快发货速度加快粉红色士大夫艰苦合适的尽快发货速度加快粉红色欸健康的粉丝偶饿可就是看看拉萨佛i二的数据恢复iEMS你发ui速度加快恢复是对何况数据的客户反馈士大夫户口"
+        app:layout_constraintTop_toBottomOf="@id/tvExpand" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="我是测试很长很差稍等哈数据库的即可获得房价快速导航福克斯大家很健康的粉红色短裤符合时代科技士大夫江户时代尽快  "
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
