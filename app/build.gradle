@@ -9,16 +9,11 @@ apply plugin: 'kotlin-kapt'
 
 
 android {
-  //  compileSdkVersion rootProject.android.compileSdkVersion
     compileSdk  rootProject.android.compileSdkVersion
     defaultConfig {
         minSdk rootProject.android.minSdkVersion
         targetSdk rootProject.android.targetSdkVersion
         applicationId rootProject.android.applicationId
-//        minSdkVersion rootProject.android.minSdkVersion
-//        targetSdkVersion rootProject.android.targetSdkVersion
-//        versionCode rootProject.android.versionCode
-//        versionName rootProject.android.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // minSdkVersion 设为 21 或更高版本，系统会默认启用 MultiDex

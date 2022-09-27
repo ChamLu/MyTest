@@ -29,7 +29,7 @@ class MyWorker(val context: Context, private val workerParameters: WorkerParamet
 
             flow {
                while (true){
-                   delay(mCountDown*1000L)
+                   delay(mCountDown*2000L)
                    emit(1)
                }
 
@@ -37,7 +37,7 @@ class MyWorker(val context: Context, private val workerParameters: WorkerParamet
                 .collect {
                     mCount++
 
-                    if(mCount>6){
+                    if(mCount>16){
                         onStopped()
                     }
 
@@ -54,7 +54,7 @@ class MyWorker(val context: Context, private val workerParameters: WorkerParamet
 
                     val s1 = listOf(myWorker,myWorker2)
 
-                    WorkManager.getInstance().enqueue(s1)
+                    WorkManager.getInstance(context).enqueue(s1)
 
 
                 }

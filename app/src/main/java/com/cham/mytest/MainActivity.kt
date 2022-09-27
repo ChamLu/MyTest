@@ -95,10 +95,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        viewModel.mS.observe(this,{
+        viewModel.mS.observe(this) {
 
-            logeMsg("","MainAty")
-        })
+            logeMsg("", "MainAty")
+        }
 
 
     }

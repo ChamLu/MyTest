@@ -22,7 +22,7 @@ class M3Work(val context: Context, private val workerParameters: WorkerParameter
             val mCountDown = inputData.getInt(Workkkk.KEY_COUNTDOWM,0)
 
 
-            logeMsg("倒计时秒数2： "," " + mCountDown)
+            logeMsg("倒计时秒数2： $mCountDown","M3Work")
 
 
             Result.success()
