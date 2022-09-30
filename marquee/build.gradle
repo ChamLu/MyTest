@@ -38,6 +38,7 @@ android {
         // for view binding :
          viewBinding = true
     }
+    namespace 'com.cham.marquee'
 
 
 }

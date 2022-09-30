@@ -63,6 +63,7 @@ exclude 在打包时移除项目中的相关文件，不打入apk文件中*/
     packagingOptions{
 
     }
+    namespace 'com.cham.mytest'
 }
 
 dependencies {

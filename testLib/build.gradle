@@ -10,6 +10,7 @@ android {
         minSdkVersion rootProject.android.minSdkVersion
         targetSdkVersion rootProject.android.targetSdkVersion
     }
+    namespace 'com.cham.testlib'
 
 }
 
@@ -17,7 +18,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     //官方组件
-    api rootProject.depsLibs.ktlibJdk8
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.0"
     api rootProject.depsLibs.appcompat
     api rootProject.depsLibs.material
     api rootProject.depsLibs.activity

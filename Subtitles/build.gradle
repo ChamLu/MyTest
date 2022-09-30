@@ -32,6 +32,7 @@ android {
         // for view binding :
         viewBinding = true
     }
+    namespace 'com.cc.mediacodec'
 }
 
 dependencies {

@@ -39,7 +39,7 @@ class MyApp : Application() {
 //        }
 //        Log.e(TAG, "当前进程名字: " + getProcesssName(this))
         registerActivityLifecycleCallbacks(appAllLife)
-
+        instance=this
 
     }
 
